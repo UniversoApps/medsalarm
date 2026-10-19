@@ -1,0 +1,50 @@
+MedsAlarm — versión web (PWA)
+==============================
+
+Esta carpeta es la app completa. Funciona en PC (Chrome, Edge, Firefox, Safari)
+y en celular (Android e iPhone), y se puede instalar como una app.
+
+CÓMO PUBLICARLA (para usarla desde cualquier dispositivo)
+---------------------------------------------------------
+Para instalarse, la app tiene que estar en una dirección https. La forma más fácil:
+
+  1. Entrá a https://app.netlify.com/drop
+  2. Arrastrá esta carpeta "webapp" a la página.
+  3. Netlify te da un link (https://algo.netlify.app). Abrilo en la PC y en el celular.
+
+Alternativas gratuitas: GitHub Pages, Cloudflare Pages o Vercel (subir la carpeta tal cual).
+
+CÓMO INSTALARLA
+---------------
+- PC (Chrome/Edge): ícono de instalar en la barra de direcciones, o Ajustes > Instalar app.
+- Android (Chrome): aparece "Instalar app" en la propia app, o menú ⋮ > Instalar aplicación.
+- iPhone/iPad (Safari): botón Compartir > "Agregar a inicio".
+
+PROBARLA EN LA PC SIN PUBLICAR
+------------------------------
+Abrir index.html con doble clic funciona para mirarla, pero sin instalación ni notificaciones.
+Para probarla completa en la PC: en esta carpeta ejecutar
+    python -m http.server 8000
+y abrir http://localhost:8000
+
+QUÉ HACE (igual que la app Android)
+-----------------------------------
+- Medicamentos con nombre, dosis, observaciones y hora diaria; editar, pausar y eliminar.
+- Alarma a pantalla completa con sonido y vibración: "Ya la tomé", "Aplazar 10 minutos",
+  "Silenciar por ahora". Si se aplaza y no se marca la toma, vuelve a sonar.
+- Notificación del sistema con botones "Ya la tomé" y "Aplazar".
+- Historial de tomas por período (7 días, 30 días, todo o fechas elegidas),
+  PDF descargable y envío por WhatsApp o correo.
+- Español, inglés y portugués. Modo claro y oscuro. Funciona sin conexión.
+- Nuevo: copia de seguridad (exportar/importar) para pasar los datos entre dispositivos.
+
+LIMITACIÓN IMPORTANTE DE LAS ALARMAS
+------------------------------------
+Un navegador no puede despertar una app cerrada como lo hace Android.
+La alarma suena mientras la app está abierta (en la PC puede estar minimizada).
+En el celular, si se cierra la app, el aviso aparece al volver a abrirla
+(hasta 60 minutos tarde). Para no perder tomas: dejarla abierta y activar
+"Mantener pantalla encendida" en Ajustes. Si la alarma no puede faltar,
+conviene seguir usando también el APK en Android.
+
+Los datos se guardan solo en cada dispositivo (no hay servidor).
